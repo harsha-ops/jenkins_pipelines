@@ -1,0 +1,42 @@
+Pipeline {
+    Agent {
+        Node {
+            Label 'Slave1'
+        }
+    }
+    stages {
+        stage('Checkout Code') {
+            steps{
+                //clone the repo
+                git branch: 'main', url: 'https://github.com/harsha-ops/jenkins_pipelines.git'
+            }
+
+        }
+        stage('Build') {
+            steps{
+                sh 'echo Building the app..'
+            }
+        }
+        stage('Test') {
+            steps{
+                sh 'echo Testing the APP..'
+            }
+        }
+        stage('Deploy') {
+            steps{
+                sh 'echo Deploying the APP..'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'pipeline finished'
+        }
+        success {
+            echo 'Pipeline compeleted successfully'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
+    }
+}
