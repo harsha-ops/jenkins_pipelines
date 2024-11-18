@@ -1,8 +1,6 @@
 Pipeline {
     Agent {
-        Node {
-            Label 'Slave1'
-        }
+        label 'Slave1'
     }
     stages {
         stage('Checkout Code') {
