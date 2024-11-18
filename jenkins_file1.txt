@@ -8,7 +8,7 @@ Pipeline {
         stage('Checkout Code') {
             steps{
                 //clone the repo
-                git branch: 'main', url: 'https://github.com/harsha-ops/jenkins_pipelines.git'
+                git branch: 'master', url: 'https://github.com/harsha-ops/jenkins_pipelines.git'
             }
 
         }
